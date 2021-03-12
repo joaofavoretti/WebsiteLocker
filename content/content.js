@@ -15,7 +15,7 @@ async function setup() {
         .style('font-size', '4rem')
         .style('color', 'white');
     info_1.position(windowWidth/3, windowHeight/4);
-    
+
     const info_2 = createP(`If so, wait for ${(minutes ?? 10)} minutes!`)
         .style('font-size', '4rem')
         .style('color', 'white');
@@ -26,7 +26,7 @@ async function setup() {
         .style('color', 'white')
         .id('center_text');
     info_timer.position(windowWidth/2, windowHeight/2);
-    
+
     let tries = 1;
 
     let x_random = random(padding, windowWidth - padding);
@@ -37,12 +37,13 @@ async function setup() {
             if (tries >= max_tries) {
                 bringBackNormalPage();
                 return;
-            }            
+            }
             tries++;
             x_random = random(padding, windowWidth - padding);
             y_random = random(padding, windowHeight - padding);
+            action_button.position(x_random, y_random);
         });
-    
+
     action_button.position(x_random, y_random);
         
     const wait_time_seconds = (minutes ?? 10) * 60;
