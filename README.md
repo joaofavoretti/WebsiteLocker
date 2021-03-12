@@ -17,3 +17,4 @@ This timer let you reconsider entering the website.
 ## Future features
 1. Popup way to add a new website to the blacklist
 2. Settings way to personalize the locked screen
+3. Space invaders on the locked page
