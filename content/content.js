@@ -38,8 +38,10 @@ async function setup() {
     let x_random = random(padding, windowWidth - padding);
     let y_random = random(padding, windowHeight - padding);
 
+    let action_button;
+
     if (!disable_skip) {
-        let action_button = createButton('Cannot wait, it is for study purposes')
+        action_button = createButton('Cannot wait, it is for study purposes')
             .mousePressed(() => {
                 if (tries >= max_tries) {
                     bringBackNormalPage();
