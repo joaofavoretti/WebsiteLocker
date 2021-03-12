@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Website Locker",
+    "description": "For those websites that you spend ours without noticing.",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches": [
+            "http://www.youtube.com/*", 
+            "https://www.youtube.com/*"
+        ],
+        "js": ["library/p5.js", "content/content.js"]
+    }],
+    "background": {
+        "scripts": ["background/background.js"]
+    },
+    "browser_action": {
+        "default_title": "Website Locker",
+        "default_icon": "images/idea.png",
+        "default_popup": "popup/index.html"
+    },
+    "icons": {
+        "16": "images/idea.png",
+        "32": "images/idea.png",
+        "48": "images/idea.png",
+        "128": "images/idea.png"
+    },
+    "permissions": ["storage"]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website locker</title>
+  <style>
+    div {
+      width: 100%;
+    }
+    body {
+      padding: 2rem;
+      width: 500px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .disable-button {
+      display:flex;
+      justify-content: flex-end;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <script src="../library/p5.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <div class="disable-button">
+    <button class="btn btn-primary">Disable</button>
+  </div>
+  <div class="form-wait-time">
+    <h3>Select for how long will you be waiting:</h1>
+    <div style="display:flex;">
+      <input class="form-control" id="minutes_input" placeholder="10">
+      <button id="asdfasdf" class="btn btn-default pt-4">Submit</button>
+    </div>
+  </div>
+</body>
+
+</html>
