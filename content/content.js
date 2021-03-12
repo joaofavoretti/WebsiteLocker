@@ -62,7 +62,7 @@ async function setup() {
 }
 
 function draw() {
-    background(0);
+    background('#303030');
 
     const p = document.getElementById('center_text');
     if(p) {
