@@ -2,7 +2,13 @@ const padding = 50;
 const max_tries = 5;
 
 async function setup() {
-    console.log("<<Tab shortcuts>> Teste content");
+    const { disable_extension } = await new Promise((resolve) => chrome.storage.sync.get('disable_extension', (value) => resolve(value)));
+    const { disable_skip } = await new Promise((resolve) => chrome.storage.sync.get('disable_skip', (value) => resolve(value)));
+    
+    if (disable_extension) {
+        return;
+    }
+
     createCanvas(windowWidth, windowHeight).position(0, 0);
 
     const { minutes } = await new Promise((resolve) => chrome.storage.sync.get('minutes', (value) => resolve(value)));
@@ -32,19 +38,21 @@ async function setup() {
     let x_random = random(padding, windowWidth - padding);
     let y_random = random(padding, windowHeight - padding);
 
-    let action_button = createButton('Cannot wait, it is for study purposes')
-        .mousePressed(() => {
-            if (tries >= max_tries) {
-                bringBackNormalPage();
-                return;
-            }
-            tries++;
-            x_random = random(padding, windowWidth - padding);
-            y_random = random(padding, windowHeight - padding);
-            action_button.position(x_random, y_random);
-        });
-
-    action_button.position(x_random, y_random);
+    if (!disable_skip) {
+        let action_button = createButton('Cannot wait, it is for study purposes')
+            .mousePressed(() => {
+                if (tries >= max_tries) {
+                    bringBackNormalPage();
+                    return;
+                }
+                tries++;
+                x_random = random(padding, windowWidth - padding);
+                y_random = random(padding, windowHeight - padding);
+                action_button.position(x_random, y_random);
+            });
+    
+        action_button.position(x_random, y_random);
+    }
         
     const wait_time_seconds = (minutes ?? 10) * 60;
 

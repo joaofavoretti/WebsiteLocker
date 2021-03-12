@@ -10,6 +10,7 @@
       width: 100%;
     }
     body {
+      background-color: #303030 !important;
       padding: 2rem;
       width: 500px;
       height: 250px;
@@ -22,23 +23,26 @@
       display:flex;
       justify-content: flex-end;
     }
+    .disable-button button {
+      margin-left: 12px;
+    }
   </style>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
   <script src="../library/p5.js"></script>
   <script src="sketch.js"></script>
 </head>
 
 <body>
   <div class="disable-button">
-    <button class="btn btn-primary">Disable</button>
+    <button id="disable_button" class="btn btn-danger">Disable Extension</button>
+    <button id="disable_skip_button" class="btn btn-danger">Disable Skip</button>
   </div>
   <div class="form-wait-time">
-    <h3>Select for how long will you be waiting:</h1>
+    <h3 style="color: #f3f3f3">Select for how long will you be waiting:</h1>
     <div style="display:flex;">
       <input class="form-control" id="minutes_input" placeholder="10">
-      <button id="asdfasdf" class="btn btn-default pt-4">Submit</button>
+      <button id="submit_button" class="btn btn-default pt-4" style="margin-left: 12px;">Submit</button>
     </div>
   </div>
 </body>
